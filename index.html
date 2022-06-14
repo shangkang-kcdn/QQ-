@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>珠峰培训-QQ音乐播放器</title>
+    <!--IMPORT CSS-->
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet/less" href="css/index.less">
+    <script src="js/less-2.5.3.min.js" async></script> -->
+    <script src="js/prefixfree.min.js"></script>
+    <!-- COMPUTED REM -->
+    <script>
+    (function(){
+        let HTML=document.documentElement;
+        const computed=()=>{
+            let deviceW=HTML.clientWidth,
+            designW=750,ratio=100;
+            ratio=deviceW>=designW?100:deviceW/designW*ratio;
+            HTML.style.fontSize=`${ratio}px`;
+
+        };
+        computed();
+        window.addEventListener('resize',computed);
+    })();
+    </script>
+</head>
+
+<body>
+   <div id="app">
+       <!-- 头部 -->
+       <header class="header_box">
+         <div class="inof">
+             <h2 class="title">我的梦</h2>
+             <h3 class="author">张靓颖</h3>
+             <img src="./images/myDream.jpg" class="pic" alt="">
+         </div>
+         <div class="music_btn"></div>
+       </header>
+       <!-- 歌词 -->
+       <main class="main_box">
+           <div class="wrapper">
+               <!-- <p class="active">我的梦 (华为手机主题曲) - 张靓颖</p>
+               <p>词：王海涛/张靓颖</p>
+               <p>曲：Andy Love</p> -->
+           </div>
+       </main>
+       <!-- 尾部 -->
+       <footer class="footer_box">
+         <div class="progress">
+             <div class="current">00:00</div>
+             <div class="bar">
+                 <div class="already"></div>
+             </div>
+             <div class="duration">00:00</div>
+         </div>
+         <a href="javascript:;" class="download">下载这首音乐</a>
+       </footer>
+       <!-- 其他 -->
+       <div class="bg_img"></div>
+       <div class="bg_mark"></div>
+       <audio src="./images/myDream.m4a" style="display:none;" id="myAudio"></audio>
+   </div>
+    <!--IMPORT JS-->
+    <script src="js/zepto.min.js" defer></script>
+    <script src="js/index.js" defer></script>
+    
+</body>
+
+</html>

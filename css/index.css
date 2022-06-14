@@ -1,0 +1,159 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+#app {
+  margin: 0 auto;
+  max-width: 750px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.bg_img,
+.bg_mark {
+  position: absolute;
+  top: -0.6rem;
+  left: -0.6rem;
+  width: 120%;
+  height: 120%;
+}
+.bg_img {
+  background: url('../images/myDream.jpg') no-repeat;
+  background-size: cover;
+  filter: blur(7px);
+  z-index: -2;
+}
+.bg_mark {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.header_box {
+  box-sizing: border-box;
+  padding: 0.34rem;
+  height: 2.1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_box .inof {
+  position: relative;
+  padding-left: 1.62rem;
+}
+.header_box .inof .title,
+.header_box .inof .author {
+  height: 0.71rem;
+  line-height: 0.71rem;
+  color: #fff;
+}
+.header_box .inof .author {
+  font-size: 0.3rem;
+}
+.header_box .inof .pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.42rem;
+  height: 1.42rem;
+}
+.header_box .music_btn {
+  box-sizing: border-box;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: url('../images/music.svg') no-repeat;
+  background-size: 100% 100%;
+}
+.header_box .music_btn.move {
+  animation: music_btn_move 1s linear infinite both;
+}
+.header_box .music_btn .main_box {
+  box-sizing: border-box;
+}
+.header_box .music_btn .footer_box {
+  box-sizing: border-box;
+  height: 2.5rem;
+  overflow: hidden;
+}
+@keyframes music_btn_move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.main_box {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.main_box .wrapper {
+  margin: 0.2rem;
+  transform: translateY(0);
+  transition: transform 0.3;
+}
+.main_box .wrapper p {
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.3rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.main_box .wrapper p.active {
+  color: #31c27c;
+  transition: color 0.3s;
+}
+.footer_box {
+  box-sizing: border-box;
+  margin: 0 0.2rem;
+  height: 2.5rem;
+  overflow: hidden;
+}
+.footer_box .progress {
+  box-sizing: border-box;
+  height: 0.92rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_box .progress .current,
+.footer_box .progress .duration {
+  width: 1.04rem;
+  line-height: 0.92rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.24rem;
+}
+.footer_box .progress .bar {
+  position: relative;
+  width: 100%;
+  height: 0.04rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+.footer_box .progress .bar .already {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #31c27c;
+}
+.footer_box .download {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 60%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.36rem;
+  border-radius: 0.5rem;
+  text-indent: 0.4rem;
+  background: url("../images/sprite_play.png") no-repeat #31c27c;
+  background-position: 0.2rem -5.83rem;
+  background-size: 0.8rem 7rem;
+}

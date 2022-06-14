@@ -1,0 +1,187 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#app {
+    margin: 0 auto;
+    max-width: 750px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg_img,
+.bg_mark {
+    position: absolute;
+    top: -.6rem;
+    left: -.6rem;
+    width: 120%;
+    height: 120%;
+}
+
+.bg_img {
+    background: url('../images/myDream.jpg') no-repeat;
+    background-size: cover;
+    filter: blur(7px);
+    z-index: -2;
+}
+
+.bg_mark {
+    background: rgba(0, 0, 0, .5);
+    z-index: -1;
+}
+
+.header_box {
+    box-sizing: border-box;
+    padding: .34rem;
+    height: 2.1rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // background: rgba(0,0, 0, .3);
+    .inof {
+        position: relative;
+        padding-left: 1.62rem;
+
+        .title,
+        .author {
+            height: 0.71rem;
+            line-height: 0.71rem;
+            color: #fff;
+        }
+
+        .author {
+            font-size: .3rem;
+        }
+
+        .pic {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.42rem;
+            height: 1.42rem;
+        }
+    }
+
+    .music_btn {
+        box-sizing: border-box;
+        width: .7rem;
+        height: .7rem;
+        background: url('../images/music.svg') no-repeat;
+        background-size: 100% 100%;
+
+        &.move {
+            animation: music_btn_move 1s linear infinite both;
+        }
+
+
+        .main_box {
+            box-sizing: border-box;
+
+        }
+
+        .footer_box {
+            box-sizing: border-box;
+            height: 2.5rem;
+            overflow: hidden;
+        }
+    }
+}
+
+@keyframes music_btn_move {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.main_box {
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .wrapper {
+        margin: .2rem;
+        transform: translateY(0);
+        transition: transform .3;
+
+        p {
+            height: 1rem;
+            line-height: 1rem;
+            text-align: center;
+            color: rgba(255, 255, 255, .5);
+            font-size: .3rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            &.active {
+                color: #31c27c;
+                transition: color .3s;
+            }
+        }
+    }
+}
+
+.footer_box {
+    box-sizing: border-box;
+    margin: 0 .2rem;
+    height: 2.5rem;
+    overflow: hidden;
+
+    .progress {
+        box-sizing: border-box;
+        height: .92rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .current,
+        .duration {
+            width: 1.04rem;
+            line-height: .92rem;
+            text-align: center;
+            color: rgba(255, 255, 255, .5);
+            font-size: .24rem;
+        }
+
+        .bar {
+            position: relative;
+            width: 100%;
+            height: .04rem;
+            background: rgba(255, 255, 255, .5);
+
+            .already {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                background: #31c27c;
+            }
+        }
+    }
+
+    .download {
+        display: block;
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: 60%;
+        height: 1rem;
+        line-height: 1rem;
+        text-align: center;
+        color: #fff;
+        font-size: .36rem;
+        border-radius: .5rem;
+        text-indent: .4rem;
+        background: url("../images/sprite_play.png") no-repeat #31c27c;       
+        background-position: .2rem -5.83rem;    
+        background-size: .8rem 7rem;
+    }
+}
